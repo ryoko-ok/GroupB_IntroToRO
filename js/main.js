@@ -8,9 +8,11 @@
   console.log("some message - from JavaScript");
 
   // find the button element on the page by its ID with JavaScript
-  let theButton = document.querySelector("#myButton");
-      theHeading = document.querySelector('h1');
-      svgImage = document.querySelector("#svgGraphic");
+  let theButton = document.querySelector("#myButton"),
+      theHeading = document.querySelector('h1'),
+      //svgImage = document.querySelector("#svgGraphic"),
+      allSVGs = document.querySelectorAll(".svg")
+;
 
   // this function changes the heading text
   function changeText() {
@@ -23,6 +25,9 @@
   }
 
   theButton.addEventListener("click", changeText);
-  svgImage.addEventListener("mouseover", logSVG);
+  //svgImage.addEventListener("click", logSVG);
+  //svgImage2.addEventListener("click", logSVG);
+
+  allSVGs.forEach(item => item.addEventListener('click', logSVG));
   //document.querySelector('h1').textContent = "Hello there from the console";
 })();
